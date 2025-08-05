@@ -28,8 +28,8 @@ export default function Navbar() {
             About
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#3cb0c9] transition-all group-hover:w-full" />
            </Link>
-          <Link href="/blog" className={navLinkClass}>
-            Blog
+          <Link href="/projects" className={navLinkClass}>
+            Projects
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#3cb0c9] transition-all group-hover:w-full" />
            </Link>
           <Link

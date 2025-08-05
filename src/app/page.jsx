@@ -5,8 +5,10 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center px-6" style={{ backgroundColor: '#1E1E2F' }}>
-      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <main className="min-h-screen flex flex-col justify-center" style={{ backgroundColor: '#1E1E2F' }}>
+      
+      {/* HERO SECTION */}
+      <div className="max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-20 px-6">
         
         {/* LEFT TEXT SIDE */}
         <div>
@@ -37,6 +39,61 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* WHY WORK WITH ME SECTION */}
+      <section className="w-full py-20" style={{ backgroundColor: '#2A2A3C' }}>
+        <div className="max-w-4xl mx-auto text-center px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#FFFFFF' }}>
+            Why Work With Me?
+          </h2>
+          <p className="text-lg md:text-xl leading-relaxed" style={{ color: '#CCCCCC' }}>
+            I focus on building high-performance, scalable web apps using modern tools like Next.js, Tailwind CSS, and MongoDB.
+            Whether you’re a startup or a growing business, I can bring your ideas to life with code that works and a design that resonates.
+          </p>
+        </div>
+      </section>
+
+      {/* CARDS SECTION */}
+      <section className="w-full py-20 px-6" style={{ backgroundColor: '#1E1E2F' }}>
+        <div className="max-w-6xl mx-auto text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold" style={{ color: '#FFFFFF' }}>
+            What I Offer
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* CARD 1 */}
+          <div className="p-6 rounded-xl shadow-lg" style={{ backgroundColor: '#2A2A3C' }}>
+            <h3 className="text-2xl font-semibold mb-4" style={{ color: '#FFFFFF' }}>
+              Responsive Design
+            </h3>
+            <p className="text-base" style={{ color: '#CCCCCC' }}>
+              I build websites that look great on all devices — mobile, tablet, and desktop — using modern CSS and frameworks.
+            </p>
+          </div>
+
+          {/* CARD 2 */}
+          <div className="p-6 rounded-xl shadow-lg" style={{ backgroundColor: '#2A2A3C' }}>
+            <h3 className="text-2xl font-semibold mb-4" style={{ color: '#FFFFFF' }}>
+              Fast Performance
+            </h3>
+            <p className="text-base" style={{ color: '#CCCCCC' }}>
+              My apps load fast and perform smoothly thanks to optimization techniques and modern frontend frameworks.
+            </p>
+          </div>
+
+          {/* CARD 3 */}
+          <div className="p-6 rounded-xl shadow-lg" style={{ backgroundColor: '#2A2A3C' }}>
+            <h3 className="text-2xl font-semibold mb-4" style={{ color: '#FFFFFF' }}>
+              Clean Code
+            </h3>
+            <p className="text-base" style={{ color: '#CCCCCC' }}>
+              I write clean, maintainable code following best practices, making it easier for teams to scale and collaborate.
+            </p>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }
