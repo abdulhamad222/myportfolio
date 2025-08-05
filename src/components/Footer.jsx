@@ -59,7 +59,7 @@ export default function Footer() {
       </div>
 
       {/* Divider + Copyright */}
-      <div className="border-t border-[#3CB0C9] mt-10 pt-6 text-center text-sm" style={{ color: '#CCCCCC' }}>
+      <div className="border-t border-gray-300 mt-10 pt-6 text-center text-sm" style={{ color: '#CCCCCC' }}>
         &copy; {new Date().getFullYear()} Abdul Hamad. All rights reserved.
       </div>
     </footer>

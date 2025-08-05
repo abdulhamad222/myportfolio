@@ -13,14 +13,13 @@ export default function Home() {
         {/* LEFT TEXT SIDE */}
         <div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#FFFFFF' }}>
-            Hi, I’m Abdul Hamad <br /> A Web Developer
+            Hi, I’m <span className='text-[#3cb0c9]'>Abdul Hamad</span> <br /> A Web Developer
           </h1>
           <p className="text-lg mb-6 leading-relaxed" style={{ color: '#CCCCCC' }}>
             I design and develop modern, fast, and responsive web apps. Clean code. Seamless UX.
           </p>
-          <Link href="/#projects">
-            <button className="px-6 py-3 rounded-xl font-medium transition duration-300" 
-              style={{ backgroundColor: '#3CB0C9', color: '#FFFFFF' }}>
+          <Link href="/projects">
+            <button className="px-4 py-2 border border-transparent rounded-md bg-[#3CB0C9] hover:border-[#3CB0C9] hover:bg-transparent hover:text-[#3CB0C9] transition duration-300">
               View My Work
             </button>
           </Link>
@@ -28,12 +27,12 @@ export default function Home() {
 
         {/* RIGHT IMAGE SIDE */}
         <div className="flex justify-center">
-          <div className="rounded-2xl overflow-hidden shadow-lg" style={{ backgroundColor: '#2A2A3C' }}>
+          <div className="rounded-2xl overflow-hidden">
             <Image
-              src="/images/IMG_6421.jpg"
+              src="/images/heroImg.png"
               alt="Abdul Hamad"
-              width={400}
-              height={400}
+              width={450}
+              height={450}
               className="object-cover"
             />
           </div>

@@ -2,36 +2,52 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
+  const navLinkClass = 'relative group transition duration-300 hover:text-[#3cb0c9]';
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
 
-    const navLinkClass = 'relative group transition duration-300 hover:text-[#3cb0c9]';
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="w-full px-6 py-4">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Empty Logo Placeholder */}
-        <div className="text-xl font-semibold text-white hidden sm:block"></div>
+    <nav className="w-full px-6 py-4 fixed backdrop-blur-md transition-all" style={{boxShadow: scrolled ? '0 1px 18px #3CB0C9' : 'none', backgroundColor: 'rgba(30, 30, 47, 0.8)', }}>
+      <div className="max-w-5xl mx-auto flex justify-between items-center">
+        
+        {/* LOGO */}
+        <div className="text-2xl font-bold text-[#3cb0c9]">
+          <Link href="/">Abdul Hamad</Link>
+        </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-12 items-center mx-auto">
+        <div className="hidden md:flex space-x-10 items-center">
           <Link href="/" className={navLinkClass}>
             Home
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#3cb0c9] transition-all group-hover:w-full" />
-           </Link>
+          </Link>
           <Link href="/about" className={navLinkClass}>
             About
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#3cb0c9] transition-all group-hover:w-full" />
-           </Link>
+          </Link>
+          <Link href="/services" className={navLinkClass}>
+            Services
+            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#3cb0c9] transition-all group-hover:w-full" />
+          </Link>
           <Link href="/projects" className={navLinkClass}>
             Projects
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#3cb0c9] transition-all group-hover:w-full" />
-           </Link>
+          </Link>
           <Link
             href="/contact"
             className="px-4 py-2 border border-transparent rounded-md bg-[#3CB0C9] hover:border-[#3CB0C9] hover:bg-transparent hover:text-[#3CB0C9] transition duration-300"
@@ -54,15 +70,19 @@ export default function Navbar() {
           <Link href="/" className={navLinkClass}>
             Home
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#3cb0c9] transition-all group-hover:w-full" />
-           </Link>
+          </Link>
           <Link href="/about" className={navLinkClass}>
             About
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#3cb0c9] transition-all group-hover:w-full" />
-           </Link>
-          <Link href="/blog" className={navLinkClass}>
-            Blog
+          </Link>
+          <Link href="/services" className={navLinkClass}>
+            Services
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#3cb0c9] transition-all group-hover:w-full" />
-           </Link>
+          </Link>
+          <Link href="/projects" className={navLinkClass}>
+            Projects
+            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#3cb0c9] transition-all group-hover:w-full" />
+          </Link>
           <Link
             href="/contact"
             className="px-4 py-2 border border-transparent rounded-md bg-[#3CB0C9] hover:border-[#3CB0C9] hover:bg-transparent hover:text-[#3CB0C9] transition duration-300"
