@@ -20,6 +20,11 @@ body {
   cursor: url('/images/my-mouse-pointer.cur'), auto;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 a,
 button,
   [role="button"],

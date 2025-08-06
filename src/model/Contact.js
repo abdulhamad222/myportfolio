@@ -2,9 +2,9 @@ import mongoose from 'mongoose';
 
 const ContactSchema = new mongoose.Schema(
   {
-    name: {
+    fullName: {
       type: String,
-      required: [true, 'Name is required'],
+      required: [true, 'Full name is required'],
       trim: true,
     },
     email: {
@@ -13,6 +13,16 @@ const ContactSchema = new mongoose.Schema(
       trim: true,
       lowercase: true,
     },
+    phone: {
+      type: String,
+      required: [true, 'Phone number is required'],
+      trim: true,
+    },
+    subject: {
+      type: String,
+      required: [true, 'Subject is required'],
+      trim: true,
+    },
     message: {
       type: String,
       required: [true, 'Message is required'],
@@ -20,9 +30,8 @@ const ContactSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true, // adds createdAt and updatedAt
+    timestamps: true,
   }
 );
 
-// Prevent model overwrite in development
 export default mongoose.models.Contact || mongoose.model('Contact', ContactSchema);

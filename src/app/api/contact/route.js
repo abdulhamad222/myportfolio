@@ -4,19 +4,25 @@ import Contact from '@/model/Contact';
 
 export async function POST(req) {
   try {
-    const { name, email, message } = await req.json();
+    const { fullName, email, phone, subject, message } = await req.json();
 
-    if (!name || !email || !message) {
-      return NextResponse.json({ error: 'Missing fields' }, { status: 400 });
+    if (!fullName || !email || !phone || !subject || !message) {
+      return NextResponse.json({ error: 'All fields are required' }, { status: 400 });
     }
 
     await connectDB();
 
-    await Contact.create({ name, email, message });
+    await Contact.create({
+      fullName,
+      email,
+      phone,
+      subject,
+      message
+    });
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Error submitting contact form:', error);
     return NextResponse.json({ error: 'Server error' }, { status: 500 });
   }
 }

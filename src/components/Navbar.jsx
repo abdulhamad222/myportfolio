@@ -32,24 +32,24 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-10 items-center">
-          <Link href="/" className={navLinkClass}>
+          <Link href="#home" className={navLinkClass}>
             Home
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#3cb0c9] transition-all group-hover:w-full" />
           </Link>
-          <Link href="/about" className={navLinkClass}>
+          <Link href="#about" className={navLinkClass}>
             About
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#3cb0c9] transition-all group-hover:w-full" />
           </Link>
-          <Link href="/services" className={navLinkClass}>
+          <Link href="#services" className={navLinkClass}>
             Services
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#3cb0c9] transition-all group-hover:w-full" />
           </Link>
-          <Link href="/projects" className={navLinkClass}>
+          <Link href="#projects" className={navLinkClass}>
             Projects
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#3cb0c9] transition-all group-hover:w-full" />
           </Link>
           <Link
-            href="/contact"
+            href="#contact"
             className="px-4 py-2 border border-transparent rounded-md bg-[#3CB0C9] hover:border-[#3CB0C9] hover:bg-transparent hover:text-[#3CB0C9] transition duration-300"
           >
             Contact
@@ -67,24 +67,24 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="flex flex-col items-center mt-4 space-y-8 md:hidden">
-          <Link href="/" className={navLinkClass}>
+          <Link href="#home" className={navLinkClass}>
             Home
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#3cb0c9] transition-all group-hover:w-full" />
           </Link>
-          <Link href="/about" className={navLinkClass}>
+          <Link href="#about" className={navLinkClass}>
             About
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#3cb0c9] transition-all group-hover:w-full" />
           </Link>
-          <Link href="/services" className={navLinkClass}>
+          <Link href="#services" className={navLinkClass}>
             Services
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#3cb0c9] transition-all group-hover:w-full" />
           </Link>
-          <Link href="/projects" className={navLinkClass}>
+          <Link href="#projects" className={navLinkClass}>
             Projects
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#3cb0c9] transition-all group-hover:w-full" />
           </Link>
           <Link
-            href="/contact"
+            href="#contact"
             className="px-4 py-2 border border-transparent rounded-md bg-[#3CB0C9] hover:border-[#3CB0C9] hover:bg-transparent hover:text-[#3CB0C9] transition duration-300"
           >
             Contact

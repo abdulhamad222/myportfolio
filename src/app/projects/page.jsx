@@ -8,10 +8,9 @@ const projects = [
     title: 'Banking Web App',
     description:
       'A modern digital banking platform with authentication, real-time transactions, loan management, and billing system using Next.js and MongoDB.',
-    image: '/images/projects/banking.png',
+    image: '/images/projects/bank.png',
     technologies: ['Next.js', 'MongoDB', 'Tailwind CSS', 'JWT'],
-    demo: 'https://your-banking-app.vercel.app',
-    github: 'https://github.com/yourusername/banking-app',
+    github: 'https://github.com/abdulhamad222/digitalbank',
   },
   {
     title: 'Task Manager',
@@ -19,8 +18,7 @@ const projects = [
       'A fully functional task management system with user authentication, real-time chat, notifications, and reporting features.',
     image: '/images/projects/taskmanager.png',
     technologies: ['Next.js', 'MongoDB', 'Socket.io', 'Tailwind CSS'],
-    demo: 'https://your-taskmanager.vercel.app',
-    github: 'https://github.com/yourusername/taskmanager',
+    github: 'https://github.com/abdulhamad222/taskmanagements',
   },
   {
     title: 'Portfolio Website',
@@ -29,18 +27,18 @@ const projects = [
     image: '/images/projects/portfolio.png',
     technologies: ['Next.js', 'Tailwind CSS'],
     demo: '/',
-    github: 'https://github.com/yourusername/portfolio',
+    github: 'https://github.com/abdulhamad222/myportfolio',
   },
 ];
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen py-20 px-6" style={{ backgroundColor: '#1E1E2F' }}>
+    <main className="min-h-screen py-20 px-6">
       <div className="max-w-7xl mx-auto text-[#CCCCCC]">
         
         {/* Header */}
         <section className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-white mb-4">My Projects</h1>
+          <h1 className="text-4xl font-bold text-white mb-4">My <span className='text-[#3CB0C9]'>Projects</span></h1>
           <p className="text-lg">
             Here are some of the projects I’ve worked on — built with modern technologies and a focus on clean design & functionality.
           </p>
@@ -49,7 +47,7 @@ export default function ProjectsPage() {
         {/* Projects Grid */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project, index) => (
-            <div key={index} className="rounded-xl overflow-hidden shadow-lg" style={{ backgroundColor: '#2A2A3C' }}>
+            <div key={index} className="rounded-xl overflow-hidden shadow-md hover:shadow-[0_0_20px_#3CB0C9] transition-all duration-500" style={{ backgroundColor: '#2A2A3C' }}>
               <div className="w-full h-48 relative">
                 <Image
                   src={project.image}
@@ -73,9 +71,6 @@ export default function ProjectsPage() {
                   ))}
                 </div>
                 <div className="flex space-x-4">
-                  <Link href={project.demo} target="_blank" className="text-[#3CB0C9] hover:underline">
-                    Live Demo
-                  </Link>
                   <Link href={project.github} target="_blank" className="text-[#3CB0C9] hover:underline">
                     GitHub
                   </Link>
@@ -84,7 +79,6 @@ export default function ProjectsPage() {
             </div>
           ))}
         </section>
-
       </div>
     </main>
   );

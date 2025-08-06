@@ -1,77 +1,63 @@
 'use client';
 
+import Image from 'next/image';
+import Link from 'next/link';
+
 export default function AboutPage() {
   return (
-    <main className="min-h-screen py-20 px-6" style={{ backgroundColor: '#1E1E2F' }}>
-      <div className="max-w-4xl mx-auto text-[#CCCCCC] space-y-16">
+    <main className="min-h-screen py-16 px-4 md:px-8 bg-[#2A2A3C] text-[#CCCCCC]">
+      <div className="max-w-6xl mx-auto">
 
-        {/* HEADER */}
-        <section>
-          <h1 className="text-4xl font-bold mb-4 text-white">About Me</h1>
-          <p className="text-lg leading-relaxed">
-            I'm <strong className="text-white">Abdul Hamad</strong>, a passionate and dedicated web developer focused on building clean, responsive, and high-performance websites and web applications. 
-            I specialize in <span className="text-white">JavaScript</span>, <span className="text-white">React</span>, and <span className="text-white">Next.js</span>, and enjoy solving real-world problems with efficient code and great UI/UX.
-          </p>
-          <p className="text-lg leading-relaxed mt-4">
-            I started my journey with a strong desire to create things for the web and quickly grew into a full-stack mindset, currently focusing on frontend design and backend integration using tools like <span className="text-white">MongoDB</span>, <span className="text-white">Express</span>, and cloud technologies.
-          </p>
-        </section>
+        {/* Heading */}
+        <h1 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
+          About <span className="text-[#3CB0C9]">Me</span>
+        </h1>
 
-        {/* SKILLS SECTION */}
-        <section>
-          <h2 className="text-3xl font-semibold mb-4 text-white">Skills</h2>
-          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3 list-disc list-inside">
-            <li>HTML5 & CSS3</li>
-            <li>JavaScript (ES6+)</li>
-            <li>React & Next.js</li>
-            <li>Tailwind CSS</li>
-            <li>MongoDB</li>
-            <li>REST APIs</li>
-            <li>Firebase Auth</li>
-            <li>Responsive Design</li>
-            <li>Git & GitHub</li>
-          </ul>
-        </section>
+        {/* Image + Text Section */}
+        <section className="flex flex-col md:flex-row items-center gap-10 mb-10">
+          {/* Image */}
+          <div className="w-48 h-48 md:w-60 md:h-60 rounded-full overflow-hidden border-4 border-[#3CB0C9] shadow-[0_0_50px_#3CB0C9] hover:shadow-none transition-all duration-500">
+            <Image
+              src="/images/about.png"
+              alt="Abdul Hamad"
+              width={250}
+              height={250}
+              className="w-full h-full object-cover"
+            />
+          </div>
 
-        {/* TOOLS */}
-        <section>
-          <h2 className="text-3xl font-semibold mb-4 text-white">Tools & Technologies I Use</h2>
-          <p className="text-lg leading-relaxed">
-            I’m comfortable working with a wide range of modern tools and libraries, including:
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4">
-            <div className="bg-[#2A2A3C] rounded-lg p-4 text-center">VS Code</div>
-            <div className="bg-[#2A2A3C] rounded-lg p-4 text-center">GitHub</div>
-            <div className="bg-[#2A2A3C] rounded-lg p-4 text-center">Postman</div>
-            <div className="bg-[#2A2A3C] rounded-lg p-4 text-center">Figma</div>
-            <div className="bg-[#2A2A3C] rounded-lg p-4 text-center">MongoDB Atlas</div>
-            <div className="bg-[#2A2A3C] rounded-lg p-4 text-center">Vercel</div>
-            <div className="bg-[#2A2A3C] rounded-lg p-4 text-center">Firebase</div>
-            <div className="bg-[#2A2A3C] rounded-lg p-4 text-center">Linux/WSL</div>
+          {/* Text */}
+          <div className="flex-1 text-base md:text-lg leading-relaxed">
+            <p>
+              Hello! I’m <span className="text-white font-semibold">Abdul Hamad</span>, a passionate web developer with a love for building intuitive and responsive digital experiences.
+              I specialize in crafting dynamic web apps using <span className="text-white">JavaScript</span>, <span className="text-white">React</span>, and <span className="text-white">Next.js</span>.
+              My mission is to deliver elegant and efficient solutions that solve real-world problems.
+            </p>
+            <p className="mt-4">
+              I started coding with a dream to turn ideas into reality. Over time, I’ve learned the power of clean design, scalable code, and great user experience.
+              Whether it’s a small business website or a full-stack SaaS app, I’m all about attention to detail and continual improvement.
+              Outside of coding, I enjoy learning new technologies, contributing to open-source, and staying updated with the latest in web development.
+            </p>
           </div>
         </section>
 
-        {/* VISION / GOALS */}
-        <section>
-          <h2 className="text-3xl font-semibold mb-4 text-white">Career Vision</h2>
-          <p className="text-lg leading-relaxed">
-            My goal is to become a top-tier full-stack developer who can build scalable, secure, and innovative products that make an impact. 
-            I aim to work with startups and established companies on meaningful projects and eventually launch my own SaaS products or tools that help businesses grow.
-          </p>
-          <p className="text-lg leading-relaxed mt-4">
-            I’m constantly learning, improving, and staying updated with the latest trends in web development and technology.
-          </p>
-        </section>
+        {/* Timeline/Story Section */}
+        <p className="text-base md:text-lg leading-relaxed text-[#CCCCCC]">
+          I began my web development journey on YouTube around a year ago. During this time, I learned the fundamentals of <span className="text-white">HTML</span>, <span className="text-white">CSS</span>, <span className="text-white">JavaScript</span>, and responsive web design. I also created logic-based projects such as a calculator, a to-do app, and a rock-paper-scissors game using <span className="text-white">Math.random</span>.
+          <br /><br />
+          After gaining confidence, I joined an institute to dive into backend development. I enrolled on <span className="text-white">December 16</span> and completed the course on <span className="text-white">July 9</span>. As part of the program, I also did an internship where I learned bug handling and was introduced to <span className="text-white">cybersecurity</span> basics.
+          <br /><br />
+          I successfully completed the course and received my certificate on <span className="text-white">August 9</span>.
+        </p>
 
-        {/* PERSONAL */}
-        <section>
-          <h2 className="text-3xl font-semibold mb-4 text-white">Beyond Coding</h2>
-          <p className="text-lg leading-relaxed">
-            When I’m not coding, I love reading about tech innovations, exploring UI/UX designs, and contributing to open-source projects. 
-            I also enjoy photography, gaming, and spending time with family and friends.
-          </p>
-        </section>
-
+        {/* Buttons */}
+        <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
+          <Link href="#contact">
+            <button className="px-5 py-2 border border-[#3CB0C9] hover:border-transparent rounded-md hover:bg-[#3CB0C9] text-[#3CB0C9] hover:text-white transition duration-300">
+              Hire Me
+            </button>
+          </Link>
+        </div>
       </div>
     </main>
   );

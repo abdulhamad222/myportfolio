@@ -24,10 +24,10 @@ export default function Footer() {
             Quick Links
           </h3>
           <ul className="space-y-2">
-            <li><Link href="/" className="hover:text-[#3CB0C9]">Home</Link></li>
-            <li><Link href="/about" className="hover:text-[#3CB0C9]">About</Link></li>
-            <li><Link href="/projects" className="hover:text-[#3CB0C9]">Project</Link></li>
-            <li><Link href="/contact" className="hover:text-[#3CB0C9]">Contact</Link></li>
+            <li><Link href="#home" className="hover:text-[#3CB0C9]">Home</Link></li>
+            <li><Link href="#about" className="hover:text-[#3CB0C9]">About</Link></li>
+            <li><Link href="#projects" className="hover:text-[#3CB0C9]">Project</Link></li>
+            <li><Link href="#contact" className="hover:text-[#3CB0C9]">Contact</Link></li>
           </ul>
         </div>
 
@@ -39,17 +39,17 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li className="flex items-center space-x-2">
               <Mail size={16} />
-              <a href="mailto:your@email.com" className="hover:text-[#3CB0C9]">your@email.com</a>
+              <a href="https://mail.google.com/mail/u/abdulhamad373" className="hover:text-[#3CB0C9]">abdulhamad373@email.com</a>
             </li>
             <li className="flex items-center space-x-2">
               <MapPin size={16} />
-              <span>Lahore, Pakistan</span>
+              <span>Fasilabad, Pakistan</span>
             </li>
             <li className="flex items-center space-x-4 mt-4">
-              <a href="https://github.com/yourusername" target="_blank" className="hover:text-[#3CB0C9]">
+              <a href="https://github.com/abdulhamad222" target="_blank" className="hover:text-[#3CB0C9]">
                 <Github size={20} />
               </a>
-              <a href="https://linkedin.com/in/yourusername" target="_blank" className="hover:text-[#3CB0C9]">
+              <a href="https://linkedin.com/in/abdul-hamad-8a3195333/" target="_blank" className="hover:text-[#3CB0C9]">
                 <Linkedin size={20} />
               </a>
             </li>

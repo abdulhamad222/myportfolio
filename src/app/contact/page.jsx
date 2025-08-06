@@ -3,7 +3,13 @@
 import { useState } from 'react';
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
   const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
@@ -22,65 +28,103 @@ export default function ContactPage() {
 
     if (res.ok) {
       setStatus('Message sent successfully!');
-      setForm({ name: '', email: '', message: '' });
+      setForm({
+        fullName: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      });
     } else {
       setStatus('Failed to send. Try again later.');
     }
   };
 
   return (
-    <main className="min-h-screen py-20 px-6" style={{ backgroundColor: '#1E1E2F' }}>
-      <div className="max-w-xl mx-auto text-center text-[#CCCCCC]">
+    <main className="min-h-screen py-20 px-6 text-[#CCCCCC]">
+      <div className="max-w-xl mx-auto text-center">
         <h1 className="text-4xl font-bold text-white mb-4">Contact Me</h1>
         <p className="mb-10">
           Got a project idea or just want to say hello? Fill out the form below and I’ll get back to you.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6 text-left">
+          {/* Full Name */}
           <div>
-            <label className="block mb-1 text-white">Name</label>
             <input
               type="text"
-              name="name"
+              name="fullName"
               required
-              value={form.name}
+              placeholder="Full Name"
+              value={form.fullName}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-lg bg-[#2A2A3C] text-white border border-gray-600"
+              className="w-full px-4 py-2 rounded-lg bg-[#2A2A3C] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#3CB0C9]"
             />
           </div>
+
+          {/* Email Address */}
           <div>
-            <label className="block mb-1 text-white">Email</label>
             <input
               type="email"
               name="email"
               required
+              placeholder="Email Address"
               value={form.email}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-lg bg-[#2A2A3C] text-white border border-gray-600"
+              className="w-full px-4 py-2 rounded-lg bg-[#2A2A3C] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#3CB0C9]"
             />
           </div>
+
+          {/* Phone Number */}
           <div>
-            <label className="block mb-1 text-white">Message</label>
+            <input
+              type="tel"
+              name="phone"
+              required
+              placeholder="Phone Number (with country code)"
+              value={form.phone}
+              onChange={handleChange}
+              className="w-full px-4 py-2 rounded-lg bg-[#2A2A3C] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#3CB0C9]"
+            />
+          </div>
+
+          {/* Subject */}
+          <div>
+            <input
+              type="text"
+              name="subject"
+              required
+              placeholder="Email Subject"
+              value={form.subject}
+              onChange={handleChange}
+              className="w-full px-4 py-2 rounded-lg bg-[#2A2A3C] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#3CB0C9]"
+            />
+          </div>
+
+          {/* Message */}
+          <div>
             <textarea
               name="message"
               required
+              placeholder="Your Message"
               rows="5"
               value={form.message}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-lg bg-[#2A2A3C] text-white border border-gray-600"
+              className="w-full px-4 py-2 rounded-lg bg-[#2A2A3C] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#3CB0C9]"
             ></textarea>
           </div>
 
+          {/* Submit Button */}
           <button
             type="submit"
-            className="w-full py-3 rounded-lg font-semibold"
-            style={{ backgroundColor: '#3CB0C9', color: '#FFFFFF' }}
+            className="w-full py-3 rounded-lg font-semibold transition duration-300 bg-[#3CB0C9] hover:bg-[#3190a5] text-white"
           >
             Send Message
           </button>
 
+          {/* Status */}
           {status && (
-            <p className="text-center mt-4 text-sm" style={{ color: '#3CB0C9' }}>
+            <p className="text-center mt-4 text-sm text-[#3CB0C9]">
               {status}
             </p>
           )}

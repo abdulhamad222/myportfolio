@@ -15,8 +15,11 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Portfolio",
-  description: "Web Developer Portfolio",
+  title: "Abdul Hamad",
+  description: "Web Developer MERN Stack Abdul Hamad",
+  icons: {
+    icon: "/images/logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {
